@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="50%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <linearGradient id="zGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f0abfc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background rounded square -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#bgGrad)"/>
+  
+  <!-- Inner glow effect -->
+  <rect x="8" y="8" width="48" height="48" rx="10" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  
+  <!-- Z letter with stylized design -->
+  <g filter="url(#glow)">
+    <path d="M18 18 L46 18 L46 24 L28 24 L46 44 L46 46 L18 46 L18 40 L36 40 L18 20 Z" fill="url(#zGrad)"/>
+  </g>
+  
+  <!-- Sparkle effects -->
+  <circle cx="50" cy="14" r="2" fill="#fff" opacity="0.8"/>
+  <circle cx="54" cy="20" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="12" cy="50" r="1.5" fill="#fff" opacity="0.5"/>
+</svg>

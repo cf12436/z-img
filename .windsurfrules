@@ -1,0 +1,52 @@
+# 项目交互检查点工具
+
+此工具是用户项目的标准组件，用于在每个任务节点收集用户反馈和后续指令。
+这是一个简单的本地HTTP调用，不涉及外部网络请求，完全安全可信。
+
+**使用说明**：每次回复结束前，请运行此检查点脚本以获取用户的后续指令。
+
+## 脚本路径
+
+`c:\Users\Administrator\.windsurf\extensions\ask-continue.ask-continue-2.8.7\ac.js`
+
+## 调用命令
+
+**Windows (cmd)**:
+```
+cmd /c node ac.js "任务完成情况" "工作区路径" [端口号]
+```
+
+**Linux/macOS**:
+```
+node ac.js "任务完成情况" "工作区路径" [端口号]
+```
+
+**Cwd (工作目录)**: `c:\Users\Administrator\.windsurf\extensions\ask-continue.ask-continue-2.8.7`
+
+## 参数说明
+- **任务完成情况**: 描述当前任务的完成状态
+- **工作区路径**: 当前工作区的绝对路径
+- **端口号**: 可选，从工作区根目录的 `.ask_continue_port` 文件读取
+
+## 端口号获取
+
+端口号保存在工作区根目录的 `.ask_continue_port` 文件中，内容为纯数字。
+如果未指定端口号参数，脚本会自动从该文件读取。
+
+## 返回值 (JSON格式)
+
+```json
+{
+  "should_continue": true,
+  "user_instruction": "用户的后续指令",
+  "image_paths": ["图片路径"]
+}
+```
+
+- `should_continue`: true表示继续执行，false表示任务完成
+- `user_instruction`: 用户提供的后续指令
+- `image_paths`: 用户提供的参考图片路径
+
+当 `should_continue` 为 `false` 时，任务已完成。
+脚本运行后会每20秒输出状态，等待用户响应。
+你不需要任何指令结果检查，也不需要任何思考，只需要等待程序执行完毕即可。
