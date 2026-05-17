@@ -96,6 +96,46 @@ export default function Footer({ locale }: FooterProps) {
                   VideoDance
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://ducttape3.org/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  DuctTape3
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://shadefinderai.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  ShadeFinder AI
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://omni2.org/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Omni2
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://omoggle.art/en" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Omoggle Art
+                </a>
+              </li>
             </ul>
           </div>
 
